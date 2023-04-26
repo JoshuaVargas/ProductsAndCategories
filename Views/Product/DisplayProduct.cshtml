@@ -1,0 +1,20 @@
+@model MyViewModel
+@{
+    ViewData["Title"] = @Model.Product.Name;
+}
+<div class="text-center">
+    <h1 class="display-6"> <a href="/">Products</a>| <a href="/categories">Categories</a></h1>
+</div>
+
+<div class="text-center">
+    <h2>@Model.Product.Name</h2>
+</div>
+<div class="products-categories">
+        <div>
+            @await Html.PartialAsync("_AllProductCategories", Model.Product)
+        </div>
+        <div>
+            @await Html.PartialAsync("_AddCategoryToProductForm", Model.Association)
+        </div>
+    </div>
+</div>

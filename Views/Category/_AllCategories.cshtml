@@ -1,0 +1,9 @@
+@model List<Category>
+<div>
+    <h2>All Categories</h2>
+</div>
+
+@foreach (var c in Model)
+    {
+        <p class="product"> <a href="/categories/@c.CategoryId">@c.Name</a></p>
+    }

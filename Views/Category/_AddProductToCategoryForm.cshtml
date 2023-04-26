@@ -1,0 +1,16 @@
+@model Association
+<h2>Add Product</h2>
+<form asp-action="AssociationCreate" asp-controller="Category" method="post">
+    <input asp-for="CategoryId" value=@ViewBag.CategoryId hidden>
+    <span asp-validation-for="ProductId" style="color: red;"></span>
+    <div>
+        <select asp-for="ProductId" style="margin-bottom: 12px;">
+            <option value="" hidden>Select a Product</option>
+            @foreach (var p in ViewBag.AllProducts)
+            {
+                <option value=@p.ProductId >@p.Name</option>
+            }
+        </select>
+    </div>
+    <button class="btn btn-primary">Add</button>
+</form>

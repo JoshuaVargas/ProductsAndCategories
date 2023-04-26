@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model MyViewModel
+<div class="text-center">
+    <h1 class="display-6">Products | <a href="/categories">Categories</a></h1>
+</div>
+<div class="products-categories">
+        <div>
+            @await Html.PartialAsync("../Product/_ProductCreateForm", Model.Product)
+        </div>
+        <div>
+            @await Html.PartialAsync("../Product/_AllProducts", Model.AllProducts)
+        </div>
+    </div>
+</div>

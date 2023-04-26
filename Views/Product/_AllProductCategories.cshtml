@@ -1,0 +1,9 @@
+@model Product
+<div>
+    <h2>Categories</h2>
+</div>
+
+@foreach (var c in Model.Categories)
+    {
+        <p class="product">@c.Category.Name</p>
+    }
